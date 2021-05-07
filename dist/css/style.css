@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@font-face {
+  font-family: "dseg7";
+  src: url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2") format("woff2"), url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff") format("woff");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0f1020;
+  color: #fffc31;
+  color: #5fad41;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+header.header-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.heading {
+  height: 132px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.heading h1 {
+  font-size: 80px;
+}
+
+.heading .weather-h {
+  padding-left: 10px;
+  color: #0e79b2;
+  font-weight: 200;
+  font-family: "IBM Plex Mono";
+  text-shadow: 2px -5px 3px #0e79b2;
+}
+
+.heading .app-h {
+  padding-right: 20px;
+  color: #bf1363;
+  font-family: "IBM Plex Mono", monospace;
+  font-style: italic;
+  text-shadow: 5px 1px #0e79b2;
+  border-right: double 7px rgba(191, 19, 99, 0.7);
+  border-top: double 7px rgba(191, 19, 99, 0.7);
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 120px;
+}
+
+.clock-wrapper {
+  margin: 20px;
+  border-radius: 10px;
+  border: solid 5px #1d1e2c;
+  font-family: "dseg7";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.clock-wrapper .clock {
+  margin: 20px;
+  font-size: 80px;
+}
+/*# sourceMappingURL=style.css.map */

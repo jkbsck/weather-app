@@ -1,0 +1,96 @@
+// VARIABLES
+$background: #0f1020;
+// $text-color: #b7fdfe;
+// $text-color: #5ef38c;
+// $text-color: #048ba8;
+// $text-color: #f1faee;
+// $text-color: #e7dfc6;
+// $text-color: #f9dec9;
+// $text-color: #aec5eb;
+$text-color: #fffc31;
+// $text-color: #e88873;
+// $text-color: #858ae3;
+$purple: #613dc1;
+$light-green: #5ef38c;
+$light-grey: #e0e2db;
+$green: #5ef38c;
+$pink: #bf1363;
+$blue: #0e79b2;
+
+// IMPORTS
+// font-family: "Roboto Mono", monospace;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+// font-family: 'IBM Plex Mono', monospace;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+@font-face {
+  font-family: "dseg7";
+  src: url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff2") format("woff2"),
+    url("fonts/DSEG7-Classic/DSEG7Classic-Bold.woff") format("woff");
+}
+
+// CONFIG
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// CONTENT
+.content {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $background;
+  color: $text-color;
+  color: #5fad41;
+  font-family: "IBM Plex Mono", monospace;
+}
+header.header-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading {
+  height: 132px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+  h1 {
+    font-size: 80px;
+  }
+  .weather-h {
+    padding-left: 10px;
+    color: $blue;
+    font-weight: 200;
+    font-family: "IBM Plex Mono";
+    text-shadow: 2px -5px 3px $blue;
+  }
+  .app-h {
+    padding-right: 20px;
+    color: $pink;
+    font-family: "IBM Plex Mono", monospace;
+    font-style: italic;
+    text-shadow: 5px 1px $blue;
+    border-right: double 7px transparentize($pink, 0.3);
+    border-top: double 7px transparentize($pink, 0.3);
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 120px;
+  }
+}
+
+.clock-wrapper {
+  margin: 20px;
+  border-radius: 10px;
+  border: solid 5px #1d1e2c;
+  font-family: "dseg7";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparentize($color: red, $amount: 0.8);
+  .clock {
+    margin: 20px;
+    font-size: 80px;
+  }
+}
