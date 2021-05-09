@@ -16,6 +16,7 @@ $light-grey: #e0e2db;
 $green: #5ef38c;
 $pink: #bf1363;
 $blue: #0e79b2;
+$old-green: #5fad41;
 
 // IMPORTS
 // font-family: "Roboto Mono", monospace;
@@ -42,9 +43,11 @@ $blue: #0e79b2;
   min-height: 100vh;
   background-color: $background;
   color: $text-color;
-  color: #5fad41;
+  color: $old-green;
   font-family: "IBM Plex Mono", monospace;
 }
+
+// HEADER
 header.header-wrapper {
   width: 100%;
   display: flex;
@@ -81,16 +84,64 @@ header.header-wrapper {
 }
 
 .clock-wrapper {
-  margin: 20px;
+  margin: 25px;
   border-radius: 10px;
-  border: solid 5px #1d1e2c;
+  border: solid 1px transparentize($color: $old-green, $amount: 0.92);
   font-family: "dseg7";
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparentize($color: red, $amount: 0.8);
+  background: repeating-linear-gradient(
+    transparentize($old-green, 0.8),
+    transparentize($old-green, 0.9) 1px,
+    transparentize($old-green, 0.98) 4px,
+    transparentize($old-green, 0.9) 7px,
+    transparentize($old-green, 0.8) 8px
+  );
+  box-shadow: -30px 120px 70px transparentize($color: $old-green, $amount: 0.92);
   .clock {
-    margin: 20px;
+    position: relative;
+    margin: 10px 20px;
     font-size: 80px;
+    &::before {
+      content: "88:88:88";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: transparentize($color: #777, $amount: 0.9);
+    }
+    &::after {
+      padding: 10px 20px;
+      content: attr(data-value);
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      left: -32px;
+      top: 85px;
+      transform: scale(1, -1) skew(25deg) scaleY(0.6);
+      border-radius: 10px;
+      color: transparent;
+      text-shadow: 0 0 4px transparentize($old-green, 0.75);
+      background: repeating-linear-gradient(
+        transparentize($old-green, 0.94),
+        transparentize($old-green, 0.97) 1px,
+        transparentize($old-green, 0.99) 4px,
+        transparentize($old-green, 0.97) 7px,
+        transparentize($old-green, 0.94) 8px
+      );
+    }
+  }
+}
+
+// MAIN CONTENT
+.main-wrapper {
+  margin-top: 100px;
+}
+
+// RESPONSIVE STYLES
+@media (max-width: 1200px) {
+  header.header-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
