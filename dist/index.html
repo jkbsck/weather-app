@@ -14,11 +14,29 @@
       </div>
       <div class="clock-wrapper">
         <span id="clock" class="clock" data-value="07:49:16">07:49:16</span>
+        <div class="second-hand"></div>
+        <div class="minute-hand"></div>
       </div>
     </header>
     
     <div class="main-wrapper">
-      
+      <div class="weather-query-wrapper">
+        <form class="location">
+          <div class="location-wrapper">
+            <label for="location">Search by location:</label>
+            <input type="search" name="location" id="location">
+          </div>  
+          <div class="api-key-wrapper">
+            <label for="api-key">API key:</label>
+            <input type="text" name="api-key" id="api-key">
+            <p>This app uses openweathermap.org API for accessing weather data. You will need their API key in order to use this app. You can generate one for free <a href="https://openweathermap.org/api" target="_blank">here</a>.</p>
+          </div>
+          <div class="submit-wrapper">
+            <div id="location-submit">Search</div>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
   <script src="main.js"></script>

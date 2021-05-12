@@ -70,6 +70,7 @@ header.header-wrapper {
 }
 
 .clock-wrapper {
+  position: relative;
   margin: 25px;
   border-radius: 10px;
   border: solid 1px rgba(95, 173, 65, 0.08);
@@ -118,8 +119,167 @@ header.header-wrapper {
   background: repeating-linear-gradient(rgba(95, 173, 65, 0.06), rgba(95, 173, 65, 0.03) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.03) 7px, rgba(95, 173, 65, 0.06) 8px);
 }
 
+.clock-wrapper .second-hand {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  background: rgba(95, 173, 65, 0.08);
+  height: 1px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 3px rgba(95, 173, 65, 0.08);
+          box-shadow: 0 0 3px rgba(95, 173, 65, 0.08);
+  -webkit-animation: second-hand-movement 2.5s linear infinite;
+          animation: second-hand-movement 2.5s linear infinite;
+}
+
+.clock-wrapper .minute-hand {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  background: rgba(95, 173, 65, 0.08);
+  height: 100%;
+  width: 1px;
+  -webkit-box-shadow: 0 0 3px rgba(95, 173, 65, 0.08);
+          box-shadow: 0 0 3px rgba(95, 173, 65, 0.08);
+  -webkit-animation: minute-hand-movement 3s linear infinite;
+          animation: minute-hand-movement 3s linear infinite;
+}
+
+@-webkit-keyframes second-hand-movement {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes second-hand-movement {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@-webkit-keyframes minute-hand-movement {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes minute-hand-movement {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 .main-wrapper {
   margin-top: 100px;
+  padding-bottom: 20px;
+}
+
+.weather-query-wrapper {
+  width: 100%;
+  margin: 20px auto;
+}
+
+form.location {
+  margin: 10px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px rgba(95, 173, 65, 0.1);
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, rgba(95, 173, 65, 0.04), rgba(95, 173, 65, 0.02) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.02) 7px, rgba(95, 173, 65, 0.04) 8px);
+}
+
+form.location > div {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form.location > div > * {
+  padding: 5px;
+}
+
+form.location .api-key-wrapper p {
+  max-width: 80%;
+  text-align: center;
+  font-size: 12px;
+}
+
+form.location .api-key-wrapper p a {
+  color: #bf1363;
+}
+
+form.location #location-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: solid 1px rgba(95, 173, 65, 0.3);
+  background: repeating-linear-gradient(rgba(95, 173, 65, 0.06), rgba(95, 173, 65, 0.03) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.03) 7px, rgba(95, 173, 65, 0.06) 8px);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+form.location #location-submit:hover {
+  -webkit-box-shadow: 0 0 3px #5fad41;
+          box-shadow: 0 0 3px #5fad41;
+  background: repeating-linear-gradient(rgba(95, 173, 65, 0.1), rgba(95, 173, 65, 0.05) 1px, rgba(95, 173, 65, 0.03) 4px, rgba(95, 173, 65, 0.05) 7px, rgba(95, 173, 65, 0.1) 8px);
+}
+
+form.location input {
+  width: 240px;
+  background: rgba(95, 173, 65, 0.2);
+  color: #1299e1;
+  font-size: 14px;
+  border: solid 1px rgba(95, 173, 65, 0.5);
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+form.location input:focus-visible {
+  outline: none;
 }
 
 @media (max-width: 1200px) {

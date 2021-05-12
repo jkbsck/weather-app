@@ -84,6 +84,7 @@ header.header-wrapper {
 }
 
 .clock-wrapper {
+  position: relative;
   margin: 25px;
   border-radius: 10px;
   border: solid 1px transparentize($color: $old-green, $amount: 0.92);
@@ -91,6 +92,7 @@ header.header-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  // overflow: hidden;
   background: repeating-linear-gradient(
     transparentize($old-green, 0.8),
     transparentize($old-green, 0.9) 1px,
@@ -131,11 +133,134 @@ header.header-wrapper {
       );
     }
   }
+  .second-hand {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    background: transparentize($color: $old-green, $amount: 0.92);
+    height: 1px;
+    width: 100%;
+    box-shadow: 0 0 3px transparentize($color: $old-green, $amount: 0.92);
+    animation: second-hand-movement 2.5s linear infinite;
+  }
+  .minute-hand {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    background: transparentize($color: $old-green, $amount: 0.92);
+    height: 100%;
+    width: 1px;
+    box-shadow: 0 0 3px transparentize($color: $old-green, $amount: 0.92);
+    animation: minute-hand-movement 3s linear infinite;
+  }
+}
+
+@keyframes second-hand-movement {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes minute-hand-movement {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 // MAIN CONTENT
 .main-wrapper {
   margin-top: 100px;
+  padding-bottom: 20px;
+}
+
+// WEATHER QUERY
+.weather-query-wrapper {
+  width: 100%;
+  margin: 20px auto;
+}
+form.location {
+  margin: 10px auto;
+  display: flex;
+  max-width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px transparentize($color: $old-green, $amount: 0.9);
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparentize($old-green, 0.96),
+    transparentize($old-green, 0.98) 1px,
+    transparentize($old-green, 0.99) 4px,
+    transparentize($old-green, 0.98) 7px,
+    transparentize($old-green, 0.96) 8px
+  );
+  & > div {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    & > * {
+      padding: 5px;
+    }
+  }
+  .api-key-wrapper {
+    p {
+      max-width: 80%;
+      text-align: center;
+      font-size: 12px;
+      a {
+        color: $pink;
+      }
+    }
+  }
+  #location-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: solid 1px transparentize($color: $old-green, $amount: 0.7);
+    background: repeating-linear-gradient(
+      transparentize($old-green, 0.94),
+      transparentize($old-green, 0.97) 1px,
+      transparentize($old-green, 0.99) 4px,
+      transparentize($old-green, 0.97) 7px,
+      transparentize($old-green, 0.94) 8px
+    );
+    font-size: 18px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 3px $old-green;
+      background: repeating-linear-gradient(
+        transparentize($old-green, 0.9),
+        transparentize($old-green, 0.95) 1px,
+        transparentize($old-green, 0.97) 4px,
+        transparentize($old-green, 0.95) 7px,
+        transparentize($old-green, 0.9) 8px
+      );
+    }
+  }
+  input {
+    width: 240px;
+    background: transparentize($color: $old-green, $amount: 0.8);
+    color: lighten($color: $blue, $amount: 10);
+    font-size: 14px;
+    border: solid 1px transparentize($color: $old-green, $amount: 0.5);
+    border-radius: 20px;
+    padding-left: 10px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
 }
 
 // RESPONSIVE STYLES

@@ -1,6 +1,7 @@
 // Clock functionality module
 const Clock = (() => {
   const clock = document.getElementById("clock");
+  const secondHand = document.querySelector(".second-hand");
 
   const initialize = () => {
     let previousTime = new Date().toLocaleTimeString("en-GB");
