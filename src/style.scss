@@ -185,6 +185,7 @@ header.header-wrapper {
   margin: 20px auto;
 }
 form.location {
+  height: 360px;
   margin: 10px auto;
   display: flex;
   max-width: 80%;
@@ -201,6 +202,7 @@ form.location {
     transparentize($old-green, 0.98) 7px,
     transparentize($old-green, 0.96) 8px
   );
+  transition: height 0.1s ease-in-out;
   & > div {
     padding: 10px;
     display: flex;
@@ -209,6 +211,36 @@ form.location {
     align-items: center;
     & > * {
       padding: 5px;
+    }
+  }
+  .search-minimalize-toggle {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 36px;
+    width: 120px;
+    margin: 5px auto;
+    border-radius: 10px;
+    border: solid 1px transparentize($color: $old-green, $amount: 0.7);
+    background: repeating-linear-gradient(
+      transparentize($old-green, 0.94),
+      transparentize($old-green, 0.97) 1px,
+      transparentize($old-green, 0.99) 4px,
+      transparentize($old-green, 0.97) 7px,
+      transparentize($old-green, 0.94) 8px
+    );
+    font-size: 18px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 3px $old-green;
+      background: repeating-linear-gradient(
+        transparentize($old-green, 0.9),
+        transparentize($old-green, 0.95) 1px,
+        transparentize($old-green, 0.97) 4px,
+        transparentize($old-green, 0.95) 7px,
+        transparentize($old-green, 0.9) 8px
+      );
     }
   }
   .api-key-wrapper {
@@ -260,6 +292,76 @@ form.location {
     &:focus-visible {
       outline: none;
     }
+  }
+}
+form.minimalized {
+  height: 48px;
+  overflow: hidden;
+  & > * {
+    display: none !important;
+  }
+  .search-minimalize-toggle {
+    display: flex !important;
+  }
+}
+
+// WEATHER RESULTS
+.results-wrapper {
+  position: relative;
+  margin: 10px auto;
+  padding: 1px;
+  display: flex;
+  width: max-content;
+  max-width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px transparentize($color: $old-green, $amount: 0.9);
+  border-radius: 10px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparentize($old-green, 0.96),
+    transparentize($old-green, 0.98) 1px,
+    transparentize($old-green, 0.99) 4px,
+    transparentize($old-green, 0.98) 7px,
+    transparentize($old-green, 0.96) 8px
+  );
+  overflow: hidden;
+  .results-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    padding: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 10px;
+    background: transparentize($color: $background, $amount: 0.15);
+    box-shadow: 2px 2px 1px transparentize($color: $background, $amount: 0.4);
+    & > div {
+      margin: 5px;
+      padding: 5px 20px;
+      text-align: center;
+    }
+    .title {
+      width: 100%;
+      font-size: 24px;
+      border-bottom: solid 1px transparentize($color: $green, $amount: 0.5);
+    }
+  }
+  .results-error {
+    position: absolute;
+    padding: 10px;
+    top: 10px;
+    width: calc(100% - 20px);
+    border-radius: 10px;
+    background: transparentize($color: $background, $amount: 0.15);
+    box-shadow: 2px 2px 1px transparentize($color: $background, $amount: 0.4);
+  }
+  .results-bg-img {
+    margin: auto;
+    border-radius: 10px;
   }
 }
 

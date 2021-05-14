@@ -192,6 +192,7 @@ header.header-wrapper {
 }
 
 form.location {
+  height: 360px;
   margin: 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -210,6 +211,8 @@ form.location {
   border: solid 1px rgba(95, 173, 65, 0.1);
   border-radius: 10px;
   background: repeating-linear-gradient(45deg, rgba(95, 173, 65, 0.04), rgba(95, 173, 65, 0.02) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.02) 7px, rgba(95, 173, 65, 0.04) 8px);
+  -webkit-transition: height 0.1s ease-in-out;
+  transition: height 0.1s ease-in-out;
 }
 
 form.location > div {
@@ -231,6 +234,34 @@ form.location > div {
 
 form.location > div > * {
   padding: 5px;
+}
+
+form.location .search-minimalize-toggle {
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 36px;
+  width: 120px;
+  margin: 5px auto;
+  border-radius: 10px;
+  border: solid 1px rgba(95, 173, 65, 0.3);
+  background: repeating-linear-gradient(rgba(95, 173, 65, 0.06), rgba(95, 173, 65, 0.03) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.03) 7px, rgba(95, 173, 65, 0.06) 8px);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+form.location .search-minimalize-toggle:hover {
+  -webkit-box-shadow: 0 0 3px #5fad41;
+          box-shadow: 0 0 3px #5fad41;
+  background: repeating-linear-gradient(rgba(95, 173, 65, 0.1), rgba(95, 173, 65, 0.05) 1px, rgba(95, 173, 65, 0.03) 4px, rgba(95, 173, 65, 0.05) 7px, rgba(95, 173, 65, 0.1) 8px);
 }
 
 form.location .api-key-wrapper p {
@@ -280,6 +311,98 @@ form.location input {
 
 form.location input:focus-visible {
   outline: none;
+}
+
+form.minimalized {
+  height: 48px;
+  overflow: hidden;
+}
+
+form.minimalized > * {
+  display: none !important;
+}
+
+form.minimalized .search-minimalize-toggle {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.results-wrapper {
+  position: relative;
+  margin: 10px auto;
+  padding: 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 80%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 1px rgba(95, 173, 65, 0.1);
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, rgba(95, 173, 65, 0.04), rgba(95, 173, 65, 0.02) 1px, rgba(95, 173, 65, 0.01) 4px, rgba(95, 173, 65, 0.02) 7px, rgba(95, 173, 65, 0.04) 8px);
+  overflow: hidden;
+}
+
+.results-wrapper .results-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  padding: 10px;
+  top: 10px;
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  background: rgba(15, 16, 32, 0.85);
+  -webkit-box-shadow: 2px 2px 1px rgba(15, 16, 32, 0.6);
+          box-shadow: 2px 2px 1px rgba(15, 16, 32, 0.6);
+}
+
+.results-wrapper .results-data > div {
+  margin: 5px;
+  padding: 5px 20px;
+  text-align: center;
+}
+
+.results-wrapper .results-data .title {
+  width: 100%;
+  font-size: 24px;
+  border-bottom: solid 1px rgba(94, 243, 140, 0.5);
+}
+
+.results-wrapper .results-error {
+  position: absolute;
+  padding: 10px;
+  top: 10px;
+  width: calc(100% - 20px);
+  border-radius: 10px;
+  background: rgba(15, 16, 32, 0.85);
+  -webkit-box-shadow: 2px 2px 1px rgba(15, 16, 32, 0.6);
+          box-shadow: 2px 2px 1px rgba(15, 16, 32, 0.6);
+}
+
+.results-wrapper .results-bg-img {
+  margin: auto;
+  border-radius: 10px;
 }
 
 @media (max-width: 1200px) {
