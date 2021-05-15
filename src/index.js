@@ -1,7 +1,6 @@
 import _, { toUpper } from "lodash";
 import "./style.scss";
 import Clock from "./clock.js";
-// import { call } from "file-loader";
 
 // Set up clocks.
 Clock.initialize();
@@ -197,15 +196,6 @@ const displayData = (wrapper, data) => {
   const time = document.createElement("div");
   time.classList.add("time");
   wrapper.appendChild(time);
-
-  /*let timeVal = new Date();
-  
-  timeVal.setHours(timeVal.getHours() + data.timezone / 3600);
-  console.log(timeVal.toUTCString());
-
-  timeVal = timeVal.toUTCString().match(/\d{1,2}:\d{2}:\d{2}/i);
-
-  time.textContent = `Local time: ${timeVal}`;*/
 
   Clock.updateLocalTime(time, data.timezone);
 };

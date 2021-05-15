@@ -1,15 +1,6 @@
 // VARIABLES
 $background: #0f1020;
-// $text-color: #b7fdfe;
-// $text-color: #5ef38c;
-// $text-color: #048ba8;
-// $text-color: #f1faee;
-// $text-color: #e7dfc6;
-// $text-color: #f9dec9;
-// $text-color: #aec5eb;
 $text-color: #fffc31;
-// $text-color: #e88873;
-// $text-color: #858ae3;
 $purple: #613dc1;
 $light-green: #5ef38c;
 $light-grey: #e0e2db;
@@ -19,9 +10,7 @@ $blue: #0e79b2;
 $old-green: #5fad41;
 
 // IMPORTS
-// font-family: "Roboto Mono", monospace;
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-// font-family: 'IBM Plex Mono', monospace;
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 @font-face {
@@ -92,7 +81,6 @@ header.header-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  // overflow: hidden;
   background: repeating-linear-gradient(
     transparentize($old-green, 0.8),
     transparentize($old-green, 0.9) 1px,
