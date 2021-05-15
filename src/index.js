@@ -197,21 +197,15 @@ const displayData = (wrapper, data) => {
   const time = document.createElement("div");
   time.classList.add("time");
   wrapper.appendChild(time);
-  let timeVal = new Date();
-  // timeVal = timeVal.getUTCDate();
-  // var timeVal = new Date(Date.UTC());
+
+  /*let timeVal = new Date();
+  
   timeVal.setHours(timeVal.getHours() + data.timezone / 3600);
   console.log(timeVal.toUTCString());
-  // time.textContent = `Local time: ${
-  //   timeVal.getUTCHours() + data.timezone / 3600
-  // }:${timeVal.getMinutes()}:${timeVal.getSeconds()}`;
 
   timeVal = timeVal.toUTCString().match(/\d{1,2}:\d{2}:\d{2}/i);
 
-  time.textContent = `Local time: ${timeVal}`;
+  time.textContent = `Local time: ${timeVal}`;*/
 
-  // setInterval(() => {
-  //   const clock = document.getElementById("clock");
-  //   time.textContent[]
-  // }, 1000);
+  Clock.updateLocalTime(time, data.timezone);
 };

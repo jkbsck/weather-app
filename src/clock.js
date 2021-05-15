@@ -33,7 +33,35 @@ const Clock = (() => {
     }, 1000 - (finishAt - startAt));
   };
 
-  return { initialize };
+  // Update local time in results. Offset is in milliseconds from UTC time.
+  const updateLocalTime = (element, offset) => {
+    let previousTime = new Date();
+
+    // Wait until new second begins.
+    while (new Date().getSeconds() === previousTime.getSeconds()) {}
+
+    let startAt = new Date(); // startAt and finishAt are for time compensation.
+
+    let time = new Date();
+    time.setHours(time.getHours() + offset / 3600);
+    time = time.toUTCString().match(/\d{1,2}:\d{2}:\d{2}/i);
+    element.textContent = `Local time: ${time}`;
+
+    let finishAt = new Date(); // startAt and finishAt are for time compensation.
+
+    setInterval(() => {
+      startAt = new Date(); // startAt and finishAt are for time compensation.
+
+      let time = new Date();
+      time.setHours(time.getHours() + offset / 3600);
+      time = time.toUTCString().match(/\d{1,2}:\d{2}:\d{2}/i);
+      element.textContent = `Local time: ${time}`;
+
+      finishAt = new Date(); // startAt and finishAt are for time compensation.
+    }, 1000 - (finishAt - startAt));
+  };
+
+  return { initialize, updateLocalTime };
 })();
 
 export { Clock as default };
