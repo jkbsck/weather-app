@@ -40,6 +40,7 @@ $old-green: #5fad41;
 // HEADER
 header.header-wrapper {
   width: 100%;
+  min-width: min-content;
   display: flex;
   justify-content: space-between;
 }

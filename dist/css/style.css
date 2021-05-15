@@ -24,6 +24,9 @@
 
 header.header-wrapper {
   width: 100%;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
