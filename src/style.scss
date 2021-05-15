@@ -34,6 +34,7 @@ $old-green: #5fad41;
   color: $text-color;
   color: $old-green;
   font-family: "IBM Plex Mono", monospace;
+  overflow: auto;
 }
 
 // HEADER
@@ -358,5 +359,11 @@ form.minimalized {
   header.header-wrapper {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  form.location {
+    height: auto;
   }
 }

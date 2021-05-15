@@ -19,6 +19,7 @@
   color: #fffc31;
   color: #5fad41;
   font-family: "IBM Plex Mono", monospace;
+  overflow: auto;
 }
 
 header.header-wrapper {
@@ -412,6 +413,12 @@ form.minimalized .search-minimalize-toggle {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  form.location {
+    height: auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
